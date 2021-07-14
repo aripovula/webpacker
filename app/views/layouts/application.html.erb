@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsReactTutorial</title>
+
+  <%= stylesheet_packs_with_chunks_tag('clientRegistration',
+                                        media: 'all',
+                                        'data-turbolinks-track': true) %>
+
+  <%= javascript_packs_with_chunks_tag('clientRegistration',
+                                       'data-turbolinks-track': true,
+                                       defer: true) %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<script> 
+      console.log("app.html.erb");
+    </script>
+<%= react_component "NavigationBarApp" %>
+<div class="container">
+  <%= yield %>
+</div>
+
+<!-- This is a placeholder for ReactOnRails to know where to render the store props for
+     client side hydration -->
+<%= redux_store_hydration_data %>
+
+</body>
+</html>
